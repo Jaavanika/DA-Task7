@@ -3,9 +3,11 @@
  1. Load SQLite Database
 
 import sqlite3
+
 conn = sqlite3.connect("sales_data.db")
 
-Explanation (in "I" form):
+Explanation:
+
 I started by importing the sqlite3 library and connecting to a local SQLite database named sales_data.db. This allowed me to interact with the database directly from Python.
 
 2. Create and Populate the Sales Table
@@ -15,8 +17,11 @@ cursor = conn.cursor()
 cursor.execute("DROP TABLE IF EXISTS sales")
 
 cursor.execute("""
+
 CREATE TABLE sales (
+
     id INTEGER PRIMARY KEY,
+    
     date TEXT,
     product TEXT,
     category TEXT,
